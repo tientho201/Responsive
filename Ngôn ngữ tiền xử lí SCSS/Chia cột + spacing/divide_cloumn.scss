@@ -1,0 +1,13 @@
+@mixin grid($column , $spacing){
+    --column: #{$column}; 
+    --spacing: #{$spacing};
+      
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: var(--spacing);
+      margin-left: calc(-1 * var(--spacing));
+      > * {
+          width: calc(100% / var(--column) - var(--spacing));
+          margin-left: var(--spacing);
+      }
+  }
